@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgentOrange</title>
+    <base href="./" />
+    <script>
+        // GitHub Pages SPA fallback, part two. 404.html stashed the original deep link and
+        // bounced us to the app root; put the real URL back before anything reads it.
+        //
+        // Ordering is load-bearing in both directions. It must run AFTER <base> is parsed,
+        // because the browser freezes the base URL when it sees that element -- rewriting
+        // history first would freeze the base against the deep link and every framework asset
+        // would 404. It must run BEFORE blazor.webassembly.js, so the router's first read of
+        // the URL is the deep link rather than the root.
+        (function () {
+            var redirect = sessionStorage.getItem('spa-redirect');
+            if (redirect) {
+                sessionStorage.removeItem('spa-redirect');
+                history.replaceState(null, '', redirect);
+            }
+        })();
+    </script>
+    <link href="_framework/dotnet.ajy84q9y8m.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-1px9LPzxP3ZsBQu91PJSu80MSdAAHft3DI8ZtGnGU6c=" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="AgentOrange.Web.styles.css" rel="stylesheet" />
+    <link href="manifest.webmanifest" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.958z1vx7fr.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.ajy84q9y8m.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.6ilbvndvcf.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.v2rwe8u38b.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.958z1vx7fr.js": "sha256-A59Tr9HqEhHMu8kU7kruLI9ayw5MRS6Lvc6z7jCbghk=",
+    "./_framework/blazor.webassembly.js": "sha256-A59Tr9HqEhHMu8kU7kruLI9ayw5MRS6Lvc6z7jCbghk=",
+    "./_framework/dotnet.ajy84q9y8m.js": "sha256-1px9LPzxP3ZsBQu91PJSu80MSdAAHft3DI8ZtGnGU6c=",
+    "./_framework/dotnet.js": "sha256-1px9LPzxP3ZsBQu91PJSu80MSdAAHft3DI8ZtGnGU6c=",
+    "./_framework/dotnet.native.6ilbvndvcf.js": "sha256-YvNi2Q+yHnXi8iT7ROza0OEWWv2tCpuTI2Ggaeura3U=",
+    "./_framework/dotnet.native.js": "sha256-YvNi2Q+yHnXi8iT7ROza0OEWWv2tCpuTI2Ggaeura3U=",
+    "./_framework/dotnet.runtime.js": "sha256-6SBqDbLLy460Bxd7wMZoiO97hZfLTuF+HRhWT3elS7U=",
+    "./_framework/dotnet.runtime.v2rwe8u38b.js": "sha256-6SBqDbLLy460Bxd7wMZoiO97hZfLTuF+HRhWT3elS7U="
+  }
+}</script>
+</head>
+
+<body>
+    <div id="app">
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+
+    <div id="pwa-update-banner" class="pwa-update-banner" style="display: none;">
+        <span>A new version is available.</span>
+        <button id="pwa-update-btn" class="btn btn-sm btn-primary">Update</button>
+    </div>
+
+    <script>
+        // Cognito has no end_session_endpoint: logout clears the oidc-client session stored by
+        // AuthenticationService.js and then redirects to Cognito's /logout endpoint (see CognitoLogoutService).
+        window.agentOrange = {
+            clearOidcSession: function () {
+                for (const storage of [window.sessionStorage, window.localStorage]) {
+                    const keys = [];
+                    for (let i = 0; i < storage.length; i++) {
+                        const key = storage.key(i);
+                        if (key && key.startsWith("oidc.")) {
+                            keys.push(key);
+                        }
+                    }
+                    keys.forEach(k => storage.removeItem(k));
+                }
+            }
+        };
+    </script>
+    <!-- Must load before blazor.webassembly.js: the authentication library expects this
+         global to exist by the time the app starts negotiating the OIDC redirect. -->
+    <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
+    <script src="_framework/blazor.webassembly.958z1vx7fr.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' });</script>
+    <script src="js/pwa-update.js"></script>
+    <script src="js/push.js"></script>
+</body>
+
+</html>
