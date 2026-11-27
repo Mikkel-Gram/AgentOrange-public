@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "aoqZMFkB",
+  "version": "b3MvWML3",
   "assets": [
     {
       "hash": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
@@ -18,16 +18,16 @@ self.assetsManifest = {
       "url": "_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"
     },
     {
-      "hash": "sha256-ioZp7JwSJOJbJ1xLjknA5Phhl4nRHF31726itpb0F/M=",
-      "url": "_framework/AgentOrange.Client.ur2m7efadd.wasm"
+      "hash": "sha256-Q0unBnJ49U1aTT/p4OXQ6t0Uzi3npRqefz7zyu+0nyM=",
+      "url": "_framework/AgentOrange.Client.7futkuob0j.wasm"
     },
     {
-      "hash": "sha256-bDoxC9KhZhnVo+JVjdxgVjMMKlsEjH4MK6dJqFpNjzg=",
-      "url": "_framework/AgentOrange.Contracts.c2ses18235.wasm"
+      "hash": "sha256-vSByEvqyhFbrWVTlupAvun3qkZxVO+vD8pKvz5uWMxA=",
+      "url": "_framework/AgentOrange.Contracts.rujfph7351.wasm"
     },
     {
-      "hash": "sha256-1VW3RQHdnlqB+yv9zUjoCEyasOz50Rb8dS1ks8mKByo=",
-      "url": "_framework/AgentOrange.Web.vji1umujmh.wasm"
+      "hash": "sha256-a+dngftjJn0GIJhKG4+/BSju5pNjBzuSgqfa9CfWK9o=",
+      "url": "_framework/AgentOrange.Web.rw17m3i82v.wasm"
     },
     {
       "hash": "sha256-0ck05XQf7kfFFXDZmlgZk+rD2V7VjcdLph0/scyd6bA=",
@@ -230,8 +230,8 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.958z1vx7fr.js"
     },
     {
-      "hash": "sha256-2v6O8Kyb6IsXR01BzAZrzJRZLRe2mHdvcr6BRi1Scnc=",
-      "url": "_framework/dotnet.6l237y6pxc.js"
+      "hash": "sha256-tI1tzNZDLsLYLxhhoyt3u0priDSCU1IGEWHYOrN7l2Q=",
+      "url": "_framework/dotnet.4a2zgzkrdk.js"
     },
     {
       "hash": "sha256-X9HNNO0PWod7guUohAjrSJMj6QxYLCm+SljNYaT8Nho=",
@@ -278,7 +278,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-BXVQRW2SpD++n02uYK7DwLgpzznC8qFFahZfLPXxZi4=",
+      "hash": "sha256-bvKY2W71IdhL+N2Sw2EpP00L4WilTEtpYDDu6elRvDk=",
       "url": "index.html"
     },
     {
