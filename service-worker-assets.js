@@ -1,12 +1,12 @@
 self.assetsManifest = {
-  "version": "jNAm/f0o",
+  "version": "aoqZMFkB",
   "assets": [
     {
       "hash": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
       "url": ".nojekyll"
     },
     {
-      "hash": "sha256-ezHTXAvPtXsfHYLdeg+5YOToqq9g9f5Icp14DIGr5wg=",
+      "hash": "sha256-v3JirYpD1oHF51A0grf0ZQvVVSe8Dw9c2MmWErDr5DA=",
       "url": "404.html"
     },
     {
@@ -18,16 +18,16 @@ self.assetsManifest = {
       "url": "_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"
     },
     {
-      "hash": "sha256-8QLjGymdI+Y/nxFOEmeniyMyVoaI6Sb8N84I8YqssJQ=",
-      "url": "_framework/AgentOrange.Client.xcywt8vtb9.wasm"
+      "hash": "sha256-ioZp7JwSJOJbJ1xLjknA5Phhl4nRHF31726itpb0F/M=",
+      "url": "_framework/AgentOrange.Client.ur2m7efadd.wasm"
     },
     {
-      "hash": "sha256-wrhZ7KTIPRHn8nf92q5BsH+XcZ6zo23cUqQ4xZGCbRs=",
-      "url": "_framework/AgentOrange.Contracts.qdhxt1tfux.wasm"
+      "hash": "sha256-bDoxC9KhZhnVo+JVjdxgVjMMKlsEjH4MK6dJqFpNjzg=",
+      "url": "_framework/AgentOrange.Contracts.c2ses18235.wasm"
     },
     {
-      "hash": "sha256-pbNvRkloquEycbObY7EH9V2cvI7FS9sBKtpuTXSoZr0=",
-      "url": "_framework/AgentOrange.Web.1pulpr6zz0.wasm"
+      "hash": "sha256-1VW3RQHdnlqB+yv9zUjoCEyasOz50Rb8dS1ks8mKByo=",
+      "url": "_framework/AgentOrange.Web.vji1umujmh.wasm"
     },
     {
       "hash": "sha256-0ck05XQf7kfFFXDZmlgZk+rD2V7VjcdLph0/scyd6bA=",
@@ -230,8 +230,8 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.958z1vx7fr.js"
     },
     {
-      "hash": "sha256-1px9LPzxP3ZsBQu91PJSu80MSdAAHft3DI8ZtGnGU6c=",
-      "url": "_framework/dotnet.ajy84q9y8m.js"
+      "hash": "sha256-2v6O8Kyb6IsXR01BzAZrzJRZLRe2mHdvcr6BRi1Scnc=",
+      "url": "_framework/dotnet.6l237y6pxc.js"
     },
     {
       "hash": "sha256-X9HNNO0PWod7guUohAjrSJMj6QxYLCm+SljNYaT8Nho=",
@@ -278,7 +278,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-TEx/bHW5om6+GCdL4rR2OhhDmef0ElglFpy1shHYWKE=",
+      "hash": "sha256-BXVQRW2SpD++n02uYK7DwLgpzznC8qFFahZfLPXxZi4=",
       "url": "index.html"
     },
     {

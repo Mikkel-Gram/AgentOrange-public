@@ -1,4 +1,4 @@
-/* Manifest version: jNAm/f0o */
+/* Manifest version: aoqZMFkB */
 // Caution! Be sure you understand the caveats before publishing an application with
 // offline support. See https://aka.ms/blazor-offline-considerations
 
@@ -13,11 +13,9 @@ const cacheName = `${cacheNamePrefix}${self.assetsManifest.version}`;
 const offlineAssetsInclude = [ /\.dll$/, /\.pdb$/, /\.wasm/, /\.html/, /\.js$/, /\.json$/, /\.css$/, /\.woff$/, /\.png$/, /\.jpe?g$/, /\.gif$/, /\.ico$/, /\.blat$/, /\.dat$/, /\.webmanifest$/ ];
 const offlineAssetsExclude = [ /^service-worker\.js$/ ];
 
-// Derived from the worker's own scope rather than hardcoded. This site is served from a GitHub
-// Pages project sub-path (/AgentOrange-public/) today but is intended to move to a custom domain
-// at the root later, and is served from the root in local development. Deriving it keeps all three
-// correct; a hardcoded value is silently wrong in two of them, leaving manifestUrlList pointing at
-// URLs that never match a real request.
+// Derived from the worker's own scope rather than hardcoded, so the same build works at the custom
+// domain root, at a GitHub Pages project sub-path, and locally. A hardcoded value is silently wrong
+// in the others, leaving manifestUrlList pointing at URLs that never match a real request.
 const baseUrl = new URL('./', self.registration.scope);
 const manifestUrlList = self.assetsManifest.assets.map(asset => new URL(asset.url, baseUrl).href);
 
